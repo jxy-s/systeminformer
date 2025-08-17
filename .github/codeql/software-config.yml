@@ -1,0 +1,51 @@
+name: 'CodeQL Software Config'
+
+queries:
+
+- uses: security-and-quality
+  include:
+    - cpp
+    - csharp
+  paths:
+    - 'SystemInformer/'
+    - 'KSystemInformer/'
+    - 'kphlib/'
+    - 'phlib/'
+    - 'phnt/'
+    - 'plugins/'
+    - 'tools/'
+    - 'tools/custombuildtool/'
+  exclude:
+    - 'tools/thirdparty/'
+
+- uses: security-extended
+  include:
+    - cpp
+    - csharp
+  paths:
+    - 'SystemInformer/'
+    - 'KSystemInformer/'
+    - 'kphlib/'
+    - 'phlib/'
+    - 'phnt/'
+    - 'plugins/'
+    - 'tools/'
+    - 'tools/custombuildtool/'
+  exclude:
+   - 'tools/thirdparty/'
+
+- uses: security-and-quality
+  include:
+    - csharp
+  paths:
+    - 'tools/custombuildtool/'
+  exclude:
+    - 'tools/custombuildtool/generated/'
+
+- uses: security-extended
+  include:
+    - csharp
+  paths:
+    - 'tools/custombuildtool/'
+  exclude:
+   - 'tools/custombuildtool/generated/'
